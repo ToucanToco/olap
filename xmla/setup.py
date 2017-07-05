@@ -3,13 +3,13 @@
 from setuptools import setup
 from distutils.util import get_platform
 
-long_description = open("README.rst").read() + "\n\n" +  open("CHANGES.rst").read() 
+long_description = open("README.rst").read() + "\n\n" +  open("CHANGES.rst").read()
 
 install_requires=[
     'olap',
     'suds-jurko == 0.6',
-    'requests == 2.5.1',
-    'six == 1.9.0'
+    'requests >= 2.5.1',
+    'six >= 1.9.0'
     ]
 
 extras_require = {
@@ -19,7 +19,7 @@ extras_require = {
 
 if get_platform().startswith('win'):
     extras_require["sspi"] = ["kerberos-sspi == 0.2"]
-    
+
 # hack, or test wont run on py2.7
 try:
     import multiprocessing
